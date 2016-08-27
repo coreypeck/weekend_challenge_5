@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Data APIs!</title>
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <!-- Angular -->
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
+
+    <script type="text/javascript" src="/scripts/ang_app.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/homeController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/catController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/dogController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/reptileController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/barnyardController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/rabbitController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/smallfurryController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/pigController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/horseController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/birdController.js"></script>
+
+</head>
+<body ng-app="myApp">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <ul class="nav nav-pills nav-justified">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#cats">Cats</a></li>
+                <li><a href="#dogs">Dogs</a></li>
+                <li><a href="#reptiles">Reptiles</a></li>
+                <li><a href="#barnyard">Barnyard</a></li>
+                <li><a href="#birds">Birds</a></li>
+                <li><a href="#horses">Horses</a></li>
+                <li><a href="#pigs">Pigs</a></li>
+                <li><a href="#smallfurry">Small and Furry</a></li>
+                <li><a href="#rabbits">Rabbits</a></li>
+
+            </ul>
+        </div>
+
+    </div>
+    <main ng-view ></main>
+
+</body>
+</html>
