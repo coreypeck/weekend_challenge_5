@@ -1,0 +1,7 @@
+<div id="#favHome" controller="favesController" class = "col-md-6">
+  <div ng-repeat="favorite in favorites">
+    <h2>{{favorite.petname}}</h2>
+    <p>{{favorite.petdescription}}</p>
+    <img ng-src="{{favorite.petimg}}" />
+  </div>
+</div>

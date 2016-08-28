@@ -1,13 +1,14 @@
 var express = require("express");
 var app = express();
+var bodyParser = require('body-parser');
 var path = require('path');
+var faves = require("./routes/faves");
+app.use(bodyParser.json());
 
 // Serve back static files
 app.use(express.static(path.join(__dirname, './public')));
 
-app.get("/jq", function(req,res,next){
-    res.sendFile(path.join(__dirname, "./public/views/indexjq.html"));
-});
+app.use("/faves", faves);
 
 // Handle index file separately
 app.get('/', function(req, res) {
