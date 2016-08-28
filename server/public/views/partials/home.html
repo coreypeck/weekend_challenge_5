@@ -1,7 +1,8 @@
 <div id="#homeHome" class = "col-md-6">
+  <div>Favorites: {{favNumber}}</div>
   <button ng-click = "getPet()">Find Random Pet</button>
-  <h2>{{animal.name.$t}}</h2>
-  <p>{{animal.description.$t}}</p>
-  <img ng-src="{{animal.media.photos.photo[0].$t}}" />
+  <h2 ng-model="animal">{{animal.name.$t}}</h2>
+  <p ng-model="animal">{{animal.description.$t}}</p>
+  <img ng-model="animal" ng-src="{{animal.media.photos.photo[0].$t}}" />
   <button ng-click="postFavorite()" class="favbutton">Add Favorite</button>
 </div>

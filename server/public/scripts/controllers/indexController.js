@@ -1,4 +1,5 @@
 myApp.controller("indexController", ["$scope", "$http", function($scope, $http) {
+    $scope.favNumber = 0;
     $scope.types = [{
         id: 0,
         value: "barnyard",
@@ -71,6 +72,7 @@ myApp.controller("indexController", ["$scope", "$http", function($scope, $http) 
                 console.log("else: am I running?");
                 var myEl = angular.element(document.querySelector('#homeHome'));
                 myEl.empty();
+                $scope.getFaves();
             }
         });
     }
@@ -93,9 +95,25 @@ myApp.controller("indexController", ["$scope", "$http", function($scope, $http) 
             data: request,
         }).then(function() {
             console.log("Added to Favorites!");
+            $scope.getFaves();
         }, function() {
             console.log("Post Error");
         });
     }
-
+    $scope.getFaves = function() {
+        $http({
+            method: "GET",
+            url: '/faves',
+        }).then(function(response) {
+            var myEl = angular.element(document.querySelector('#homeHome'));
+            myEl.empty();
+            console.log("Get Success");
+            // console.log(response);
+            $scope.favNumber = response.data;
+            $scope.favNumber = $scope.favNumber.length
+            console.log($scope.favNumber);
+        }, function() {
+            console.log("Get Error");
+        });
+    }
 }]);

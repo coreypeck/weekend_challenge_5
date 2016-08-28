@@ -1,5 +1,6 @@
 myApp.controller("favesController", ["$scope", "$http", function($scope, $http) {
     console.log("Am I runnin?");
+    $scope.favNumber = 0;
     $scope.getFaves = function() {
         $http({
             method: "GET",
@@ -10,6 +11,8 @@ myApp.controller("favesController", ["$scope", "$http", function($scope, $http) 
             console.log("Get Success");
             // console.log(response);
             $scope.favorites = response.data;
+            $scope.favNumber = $scope.favorites;
+            $scope.favNumber = $scope.favNumber.length
             console.log($scope.favorites);
         }, function() {
             console.log("Get Error");
