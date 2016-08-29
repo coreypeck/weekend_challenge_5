@@ -27,4 +27,17 @@ myApp.controller("favesController", ["$scope", "$http", function($scope, $http) 
     //When the page loads, fun this function
 
     angular.element(document).ready($scope.getFaves);
+
+    $scope.deleteFav = function(id) {
+      if(confirm("Delete this task??!")) {
+        console.log('delete task id ', id);
+        $http.delete('/faves/' + id).then(function(response) {
+          if(response.status == 202) {
+            $scope.getFaves();
+          } else {
+            console.log('error deleting task');
+          }
+        });
+      };
+  }
 }]);

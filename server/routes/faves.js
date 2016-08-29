@@ -44,4 +44,28 @@ router.get('/', function(req, res) {
 
   });
 });
+router.delete('/:id', function(req, res) {
+  var petID = req.params.id;
+  console.log(petID);
+  pg.connect(connectionString, function(err, client, done) {
+    if(err) {
+      console.log(err);
+      res.sendStatus(500);
+    }
+
+  client.query("DELETE FROM favoritepets WHERE petid=$1",
+      [petID],
+      function(err, result) {
+        done();
+
+        if(err) {
+          console.log("delete error: ", err);
+          res.sendStatus(500);
+        }
+
+        res.sendStatus(202);
+    });
+  });
+
+});
 module.exports = router;

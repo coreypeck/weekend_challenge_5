@@ -1,6 +1,6 @@
 
 <div controller="favesController">
-    <div id ="favHome" ng-repeat="favorite in favorites">
+    <div id ="favHome" ng-model="favorite" ng-repeat="favorite in favorites">
         <h2 class="petName">{{favorite.petname}}</h2>
         <div class="row">
             <div class="col-sm-1"></div>
@@ -15,6 +15,9 @@
                 <p class="petDescription">{{favorite.petdescription}}</p>
             </div>
             <div class="col-sm-1"></div>
+        </div>
+        <div class="deleteHome">
+          <button class="delete" ng-click="deleteFav(favorite.petid)">DELETE ME?!</button>
         </div>
     </div>
     <div class="favGroup">
