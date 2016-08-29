@@ -9,19 +9,26 @@
     <!-- Angular -->
     <script type="text/javascript" src="/vendors/angular.min.js"></script>
     <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
-
     <script type="text/javascript" src="/scripts/ang_app.js"></script>
     <script type="text/javascript" src="/scripts/controllers/indexController.js"></script>
     <script type="text/javascript" src="/scripts/controllers/favesController.js"></script>
 </head>
 
-<body >
-  <button><a href="#home">Home</a></button>
-  <button><a href="#faves">Favorites</a></button>
-  <div ng-app="myApp" ng-controller="indexController">
-    <select ng-model="selectedItem" ng-options="type.id as type.kind for type in types" ng-change="getPet()"></select>
-      <main ng-view></main>
-  </div>
+<body>
+    <h1>Find a Pet with Petfinder!</h1>
+    <div class="directory">
+        <button><a href="#home">Home</a></button>
+        <button><a href="#faves">Favorites</a></button>
+    </div>
+    <div ng-app="myApp" ng-controller="indexController">
+      <div class="directory">
+        <select class="dropdown" ng-model="selectedItem" ng-options="type.id as type.kind for type in types" ng-change="getPet()"></select>
+      </div>
+        <main ng-view></main>
+        <div class="col-sm-6"></div>
+        <img class="catimg col-sm-1" height="100" width="100" src="./imgs/catreach.jpeg" alt="Cat"/>
+        <div class="col-sm-5"></div>
+    </div>
 </body>
 
 </html>

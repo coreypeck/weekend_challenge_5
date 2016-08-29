@@ -1,8 +1,23 @@
-<div id="#favHome" controller="favesController" class = "col-md-6">
-  <div>Favorites: {{favNumber}}</div>
-  <div ng-repeat="favorite in favorites">
-    <h2>{{favorite.petname}}</h2>
-    <p>{{favorite.petdescription}}</p>
-    <img ng-src="{{favorite.petimg}}" />
-  </div>
+
+<div controller="favesController">
+    <div id ="favHome" ng-repeat="favorite in favorites">
+        <h2 class="petName">{{favorite.petname}}</h2>
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2">
+                <div class="img-home">
+                    <div class="center-block vertical-center">
+                        <img class="petImg" height="200" width="150" ng-src="{{favorite.petimg}}" />
+                    </div>
+                </div>
+            </div>
+            <div class="textHome col-sm-8">
+                <p class="petDescription">{{favorite.petdescription}}</p>
+            </div>
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+    <div class="favGroup">
+        <div class="totalFavorites">Total Favorites: {{favNumber}}</div>
+    </div>
 </div>

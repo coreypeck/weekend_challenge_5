@@ -1,0 +1,48 @@
+h1 {
+    text-align: center;
+}
+h2 {
+    margin-top: 35px;
+    text-align: center;
+}
+.directory {
+    text-align: center;
+    margin-bottom: 10px;
+}
+#homeHome {
+    background-color: LightBlue;
+    border: 2px solid blue;
+    height: 350px;
+    margin: 0 10px 0 10px;
+}
+#favHome {
+    background-color: LightBlue;
+    border: 2px solid blue;
+    height: 350px;
+    margin: 0 10px 0 10px;
+}
+.textHome {
+    height: 200px;
+    overflow: scroll;
+}
+.totalFavorites {
+    display: inline;
+}
+.favGroup {
+    text-align: center;
+    margin-top: 10px;
+}
+.petImg {
+    display: inline;
+}
+.img-home {
+    height: 250px;
+}
+.dropdown {
+    display: inline;
+    text-align: center;
+}
+.catimg {
+    margin: 0;
+    padding: 0;
+}

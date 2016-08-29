@@ -52,8 +52,6 @@ myApp.controller("indexController", ["$scope", "$http", function($scope, $http) 
         } else {
             query += '&animal=' + $scope.pettype;
         }
-        var myEl = angular.element(document.querySelector('#homeHome'));
-        myEl.empty();
         query += '&output=basic';
         query += '&format=json';
 
@@ -61,17 +59,18 @@ myApp.controller("indexController", ["$scope", "$http", function($scope, $http) 
 
         var request = encodeURI(query) + '&callback=JSON_CALLBACK';
         console.log(request);
-
         $http.jsonp(request).then(function(response) {
             console.log("Start: am I running?");
-            $scope.animal = response.data.petfinder.pet;
-            if ($scope.animal.name.$t == undefined || $scope.animal.description.$t == undefined || $scope.animal.media.photos == undefined || $scope.animal.media.photos.photo[0].$t == undefined) {
+            var testing = response.data.petfinder.pet;
+
+            if (testing.name.$t == undefined || testing.description.$t == undefined || testing.media.photos == undefined || testing.media.photos.photo[0].$t == undefined) {
                 console.log("if: am I running?");
                 $scope.getPet();
             } else {
+              $scope.animal = response.data.petfinder.pet;
                 console.log("else: am I running?");
-                var myEl = angular.element(document.querySelector('#homeHome'));
-                myEl.empty();
+                // var myEl = angular.element(document.querySelector('#homeHome'));
+                // myEl.empty();
                 $scope.getFaves();
             }
         });
@@ -105,8 +104,6 @@ myApp.controller("indexController", ["$scope", "$http", function($scope, $http) 
             method: "GET",
             url: '/faves',
         }).then(function(response) {
-            var myEl = angular.element(document.querySelector('#homeHome'));
-            myEl.empty();
             console.log("Get Success");
             // console.log(response);
             $scope.favNumber = response.data;
