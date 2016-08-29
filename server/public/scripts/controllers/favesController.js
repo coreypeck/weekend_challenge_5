@@ -1,3 +1,6 @@
+
+//A GET call to grab all my favorites.
+
 myApp.controller("favesController", ["$scope", "$http", function($scope, $http) {
     console.log("Am I runnin?");
     $scope.favNumber = 0;
@@ -9,7 +12,9 @@ myApp.controller("favesController", ["$scope", "$http", function($scope, $http) 
           var myEl = angular.element(document.querySelector('#homeHome'));
           myEl.empty();
             console.log("Get Success");
-            // console.log(response);
+
+            //I get the number from the .length of what I get from the DB. I did It in several steps to ensure it got in how I wanted it
+
             $scope.favorites = response.data;
             $scope.favNumber = $scope.favorites;
             $scope.favNumber = $scope.favNumber.length
@@ -18,5 +23,8 @@ myApp.controller("favesController", ["$scope", "$http", function($scope, $http) 
             console.log("Get Error");
         });
     }
+
+    //When the page loads, fun this function
+
     angular.element(document).ready($scope.getFaves);
 }]);
