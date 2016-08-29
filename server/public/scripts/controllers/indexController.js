@@ -73,7 +73,7 @@ myApp.controller("indexController", ["$scope", "$http", function($scope, $http) 
 
             //If the pet doesn't have a name, description, and one picture, they don't get shown
 
-            if (testing.name.$t == undefined || testing.description.$t == undefined || testing.media.photos == undefined || testing.media.photos.photo[0].$t == undefined) {
+            if (testing.name.$t == undefined || testing.description.$t == undefined || testing.media.photos == undefined || testing.media.photos.photo[2].$t == undefined) {
                 console.log("if: am I running?");
                 $scope.getPet();
             } else {
@@ -99,7 +99,7 @@ myApp.controller("indexController", ["$scope", "$http", function($scope, $http) 
         var request = {
             id: $scope.animal.id.$t,
             name: $scope.animal.name.$t,
-            photo: $scope.animal.media.photos.photo[0].$t,
+            photo: $scope.animal.media.photos.photo[2].$t,
             description: description
         }
         console.log(request);
